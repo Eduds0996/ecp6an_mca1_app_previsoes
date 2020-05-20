@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<title>Hello Spring Boot</title>
+<title>Previsao da Semana</title>
 <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
 	rel="stylesheet" />
 <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
@@ -24,6 +24,9 @@
 						<th>Temperatura Mínima</th>
 						<th>Umidade Relativa do ar</th>
 						<th>Descrição</th>
+						<th>Data e hora</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -31,11 +34,29 @@
 					<td th:text="${previsao.diadasemana}"></td>
 					<td th:text="${previsao.temperaturamax}"></td>
 					<td th:text="${previsao.temperaturamin}"></td>
-					<td th:text="${previsao.umidaderelativa}"></td>
+					<td th:text="${previsao.humidaderelativa}"></td>
 					<td th:text="${previsao.descricao}"></td>
+					<td th:text="${previsao.datahora}"></td>
+					<td th:text="${previsao.latitude}"></td>
+					<td th:text="${previsao.longitude}"></td>
 					</tr>
 				</tbody>
 			</table>
+			<form class="form-inline" method="post" th:object="${previsao}" th:action="@{/previsaotempo}" style="margin: 20px 0">
+
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Dia da semana" th:field="*{diadasemana}" /> 
+					<input type="text" class="form-control"	placeholder="Temperatura Minima" th:field="*{temperaturamax}" /> 
+					<input type="text" class="form-control" placeholder="Temperatura Maxima" th:field="*{temperaturamin}" />
+					<input type="text" class="form-control" placeholder="Temperatura Maxima" th:field="*{humidaderelativa}" />
+					<input type="text" class="form-control" placeholder="Descrição" th:field="*{descricao}" />
+					<input type="text" class="form-control" placeholder="Data e Hora" th:field="*{datahora}" />
+					<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}" />
+					<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}" />
+					<button type="submit" class="btn btn-primary">Adicionar</button>
+
+				</div>
+			</form>
 		</div>
 	</div>
 </body>

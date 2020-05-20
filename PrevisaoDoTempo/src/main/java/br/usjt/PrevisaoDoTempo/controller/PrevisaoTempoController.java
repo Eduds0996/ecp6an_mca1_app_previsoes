@@ -5,23 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.usjt.PrevisaoDoTempo.model.PrevisaoDoTempo;
-import br.usjt.PrevisaoDoTempo.repository.TempoRepository;
+import br.usjt.PrevisaoDoTempo.model.Previsao;
+import br.usjt.PrevisaoDoTempo.service.PrevisaoService;
 
 @Controller
 public class PrevisaoTempoController {
-	
 	@Autowired
-	private TempoRepository previsaoRepo;
+	private PrevisaoService previsaoService;
 	
 	@GetMapping("/previsaotempo")
 	public ModelAndView listarPrevisaoTempo() {
 		ModelAndView mv = new ModelAndView("lista_Previsao_Tempo");
-		List<PrevisaoDoTempo> previsaoTempo = previsaoRepo.findAll();
+		mv.addObject(new Previsao());
+		List<Previsao> previsaoTempo = previsaoService.listarPrevisaoTempo();
 		mv.addObject("previsaoTempo", previsaoTempo);
 		return mv;
 	}
-	
+	@PostMapping("/previsaotempo")
+	public String salvar(Previsao previsao) {
+		previsaoService.salvar(previsao);
+		return "redirect:/previsaotempo";
+	}
 }

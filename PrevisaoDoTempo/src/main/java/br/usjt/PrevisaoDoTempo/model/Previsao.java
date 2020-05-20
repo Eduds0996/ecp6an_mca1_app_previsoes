@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,8 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity @Getter @Setter @AllArgsConstructor @NoArgsConstructor
-@Table(name="previsao")
-public class PrevisaoDoTempo implements Serializable{
+public class Previsao implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -25,7 +23,9 @@ public class PrevisaoDoTempo implements Serializable{
 	private String diadasemana;
 	private double temperaturamax;
 	private double temperaturamin;
-	private double umidaderelativa;
+	private double humidaderelativa;
 	private String descricao;
-	
+	private String datahora;
+	private double latitude;
+	private double longitude;
 }
