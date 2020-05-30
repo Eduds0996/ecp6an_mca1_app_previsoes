@@ -31,7 +31,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="previsao : ${previsaoTempo}">
-					<td th:text="${previsao.diadasemana}"></td>
+					<td th:text="${previsao.diadasemana.diadasemana}"></td>
 					<td th:text="${previsao.temperaturamax}"></td>
 					<td th:text="${previsao.temperaturamin}"></td>
 					<td th:text="${previsao.humidaderelativa}"></td>
@@ -42,6 +42,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<!-- 
 			<form class="form-inline" method="post" th:object="${previsao}" th:action="@{/previsaotempo}" style="margin: 20px 0">
 
 				<div class="form-group">
@@ -57,6 +58,7 @@
 
 				</div>
 			</form>
+			 -->
 		</div>
 	</div>
 </body>
