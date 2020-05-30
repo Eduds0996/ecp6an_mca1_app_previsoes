@@ -25,6 +25,7 @@
 						<th>Umidade Relativa do ar</th>
 						<th>Descrição</th>
 						<th>Data e hora</th>
+						<th>Cidade</th>
 						<th>Latitude</th>
 						<th>Longitude</th>
 					</tr>
@@ -37,8 +38,9 @@
 					<td th:text="${previsao.humidaderelativa}"></td>
 					<td th:text="${previsao.descricao}"></td>
 					<td th:text="${previsao.datahora}"></td>
-					<td th:text="${previsao.latitude}"></td>
-					<td th:text="${previsao.longitude}"></td>
+					<td th:text="${previsao.cidade.nome}"></td>
+					<td th:text="${previsao.cidade.latitude}"></td>
+					<td th:text="${previsao.cidade.longitude}"></td>
 					</tr>
 				</tbody>
 			</table>
