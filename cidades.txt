@@ -1,0 +1,30 @@
+{
+        "id": 1,
+        "nome": "São Paulo",
+        "latitude": -23.5489,
+        "longitude": -46.6388823
+    },
+    {
+        "id": 2,
+        "nome": "Rio de Janeiro",
+        "latitude": -22.9035,
+        "longitude": -43.2096
+    },
+    {
+        "id": 3,
+        "nome": "Salvador",
+        "latitude": -12.9704,
+        "longitude": -38.5124
+    },
+    {
+        "id": 4,
+        "nome": "Campinas",
+        "latitude": -22.9064,
+        "longitude": -47.0616
+    },
+    {
+        "id": 5,
+        "nome": "Recife",
+        "latitude": -8.05428,
+        "longitude": -34.8813
+    },
