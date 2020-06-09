@@ -30,7 +30,6 @@ public class CidadeResource {
 	}
 
 	@PostMapping ("/salvarCidade")
-	//@ResponseStatus (HttpStatus.CREATED) agora desnecessária
 	public ResponseEntity<Cidade> salvar ( @RequestBody Cidade cidade, HttpServletResponse
 			response) {
 		Cidade l = cidadeRepo.save(cidade);
@@ -39,8 +38,6 @@ public class CidadeResource {
 				fromCurrentServletMapping().path("/{id}").
 				buildAndExpand(l.getId()).
 				toUri();
-		//desnecessário também
-		//response.setHeader("Location", uri.toASCIIString());
 		return ResponseEntity.created(uri).body(l);
 	}
 	
